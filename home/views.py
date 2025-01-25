@@ -7,7 +7,7 @@ def index(request):
     return render(request,"index.html")
 
 def sobre(request):
-    return render(request,"Sobre.html")
+    return render(request,"sobre.html")
 
 def contato(request):
     return render(request,"contato.html")
