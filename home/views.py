@@ -13,7 +13,7 @@ def contato(request):
     return render(request,"contato.html")
 
 def localização(request):
-    return render(request,"localização.html")
+    return render(request,"localizacao.html")
 
 def ajuda(request):
     return render(request,"ajuda.html")
