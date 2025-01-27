@@ -12,5 +12,8 @@ def sobre(request):
 def contato(request):
     return render(request,"contato.html")
 
+def localização(request):
+    return render(request,"localização.html")
+
 def ajuda(request):
     return render(request,"ajuda.html")
