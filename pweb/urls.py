@@ -25,4 +25,6 @@ urlpatterns = [
     path('contato', views.contato,name='contato'),
     path('localizacao', views.localizacao,name='localizacao'),
     path('ajuda', views.ajuda,name='ajuda'),
+    path('exibiritem/<int:id>', views.exibiritem,name='exibiritem'),
+    path('perfil/<str:usuario>/', views.perfil, name='perfil'),
 ]

@@ -17,3 +17,9 @@ def localizacao(request):
 
 def ajuda(request):
     return render(request,"ajuda.html")
+
+def exibiritem(request,id):
+    return render(request,'exibiritem.html',{"id":id})
+
+def perfil(request,usuario):
+    return render(request,'perfil.html',{"usuario":usuario})
