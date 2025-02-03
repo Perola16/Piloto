@@ -27,4 +27,6 @@ urlpatterns = [
     path('ajuda', views.ajuda,name='ajuda'),
     path('exibiritem/<int:id>', views.exibiritem,name='exibiritem'),
     path('perfil/<str:usuario>/', views.perfil, name='perfil'),
+    path("dados/",views.dados,name="dados"),
+    path("form/",views.form,name="form"),
 ]

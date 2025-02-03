@@ -23,3 +23,31 @@ def exibiritem(request,id):
 
 def perfil(request,usuario):
     return render(request,'perfil.html',{"usuario":usuario})
+
+def dados(request):
+    context={
+        'nome': "Pérola",
+        'data_nascimento': "05/10/2007",
+        'rg': "*******",
+        'CPF': "******",
+        'telefone': "(89)98102-3839",
+        'e-mail': "perola.ppc@gmail.com",
+        'endereço': "Rua Domingos Borges, 2367, Santa Fé, Teresina, Piauí,*********",
+    }
+    return render(request,"dados.html",context)
+
+def form(request):
+    if request.method == "POST":
+        nome=request.POST.get("nome")
+        idade=request.POST.get("idade")
+        cidade=request.POST.get("cidade")
+        
+        context={
+            "nome": nome,
+            "idade": idade,
+            "cidade": cidade,
+        }
+        
+        return render(request,"dados.html",context)
+    else:
+        return render(request,"form.html")
