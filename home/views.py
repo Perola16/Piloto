@@ -31,8 +31,8 @@ def dados(request):
         'rg': "*******",
         'CPF': "******",
         'telefone': "(89)98102-3839",
-        'e-mail': "perola.ppc@gmail.com",
-        'endereço': "Rua Domingos Borges, 2367, Santa Fé, Teresina, Piauí,*********",
+        'email': "perola.ppc@gmail.com",
+        'endereco': "Rua Domingos Borges, 2367, Santa Fé, Teresina, Piauí,*********",
     }
     return render(request,"dados.html",context)
 
