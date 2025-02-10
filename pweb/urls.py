@@ -21,12 +21,14 @@ from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name='index'),
-    path('sobre', views.sobre,name='sobre'),
-    path('contato', views.contato,name='contato'),
-    path('localizacao', views.localizacao,name='localizacao'),
-    path('ajuda', views.ajuda,name='ajuda'),
+    path('sobre/', views.sobre,name='sobre'),
+    path('contato/', views.contato,name='contato'),
+    path('localizacao/', views.localizacao,name='localizacao'),
+    path('ajuda/', views.ajuda,name='ajuda'),
     path('exibiritem/<int:id>', views.exibiritem,name='exibiritem'),
     path('perfil/<str:usuario>/', views.perfil, name='perfil'),
     path("dados/",views.dados,name="dados"),
     path("form/",views.form,name="form"),
+    path("alunos/listar/",views.listar_alunos,name="listar_alunos"),
+    path("alunos/editar/<int:indice>/",views.editar_aluno,name="editar_aluno"),
 ]
