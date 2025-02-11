@@ -1,7 +1,40 @@
 from django.shortcuts import render, HttpResponse
 
 # Create your views here.
-from django.http import HttpResponse
+from django.shortcuts import redirect
+
+LISTA_ALUNOS = [
+    {"nome": "João Silva", "matricula": "202301", "data_nascimento": "03/10/2009","curso": "Técnico em Informática", "turma": "208"},
+    {"nome": "Maria Oliveira", "matricula": "202302", "data_nascimento": "05/02/2008","curso": "Técnico em Informática", "turma": "208"},
+    {"nome": "Carlos Souza", "matricula": "202303", "data_nascimento": "20/12/2009","curso": "Técnico em Informática", "turma": "208"},
+]
+def listar_alunos(request):
+    context={
+        'lista': LISTA_ALUNOS,
+    }
+    return render(request, "listar_alunos.html", context)
+
+def editar_aluno(request, indice):
+    aluno = LISTA_ALUNOS[indice]  # Obtém a referência do aluno na lista
+
+
+    if request.method == "POST":
+        # Atualiza diretamente os valores do dicionário aluno
+        aluno['nome'] = request.POST.get("nome")
+        aluno['matricula'] = request.POST.get("matricula")
+        aluno['curso'] = request.POST.get("curso")
+        aluno['turma'] = request.POST.get("turma")
+
+
+        return redirect('listar_alunos')  # Redireciona para a lista de alunos
+
+
+    context = {
+        'aluno': aluno,
+        'indice': indice
+    }
+    return render(request, 'form_aluno.html', context)
+
 
 def index(request):
     return render(request,"index.html")
